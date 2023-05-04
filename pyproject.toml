@@ -2,7 +2,7 @@
 name = "data-collection"
 version = "0.1.0"
 description = ""
-authors = ["Santo"]
+authors = ["Santo K Thomas"]
 readme = "README.md"
 packages = [{include = "data_collection"}]
 
