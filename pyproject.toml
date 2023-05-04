@@ -8,7 +8,7 @@ packages = [{include = "data_collection"}]
 
 [tool.poetry.dependencies]
 # python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
-python = "^3.8"
+python = ">=3.8,<3.9.7 || >3.9.7,<4.0"
 streamlit = "^1.19.0"
 gspread = "^5.7.2"
 pandas = "^1.5.3"
