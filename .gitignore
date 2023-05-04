@@ -135,3 +135,4 @@ files/
 
 assets/credentials/google_sheet_db__datacollector.json
 poetry.lock
+notebook.ipynb
