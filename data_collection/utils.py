@@ -14,7 +14,7 @@ def load_cred_template() -> dict:
 
 def create_gcp_credentials_json():
     load_dotenv()
-    json_data = {k:os.environ(f"GCP_{k}") for k in load_cred_template().keys()}
+    json_data = {k:os.environ[f"GCP_{k}"] for k in load_cred_template().keys()}
     with open(GCP_CREDENTIALS_JSON_PATH, 'w') as f:
         json.dump(json_data, f, sort_keys=False, indent=4)
 
