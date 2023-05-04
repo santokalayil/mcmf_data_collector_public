@@ -10,8 +10,8 @@ load_dotenv()
 # to configuration file
 GOOGLE_CREDS_FILE = "google_sheet_db__datacollector.json"
 
-SERVICE_ACCOUNT = os.getenv("GCP_client_email")
-DB_SHEET_ID = os.getenv("DB_SHEET_ID")
+SERVICE_ACCOUNT = os.environ("GCP_client_email")
+DB_SHEET_ID = os.environ("DB_SHEET_ID")
 DATA_UPLOAD_WORKSHEET_ID = 0
 
 
