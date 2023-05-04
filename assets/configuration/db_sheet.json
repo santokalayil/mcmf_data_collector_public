@@ -1,0 +1,135 @@
+{
+    "columns": {
+        "name": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "parish": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "region": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "dob": {
+            "type": "date",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+            }
+        },
+        "occupation": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+            }
+        },
+        "education": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+            }
+        },
+        "address": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "phone": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "email": {
+            "type": "email",
+            "question": "",
+            "can_be_null": true,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "village_or_municipality": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "sui_uris_at_birth": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "husband_name": {
+            "type": "text",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "husband_occupation": {
+            "type": "text",
+            "question": "",
+            "can_be_null": true,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "husband_dob": {
+            "type": "text",
+            "question": "",
+            "can_be_null": true,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "husband_phone": {
+            "type": "text",
+            "question": "",
+            "can_be_null": true,
+            "additional_params": {
+                "max_chars": 25
+            }
+        },
+        "dom": {
+            "type": "date",
+            "question": "",
+            "can_be_null": false,
+            "additional_params": {
+            }
+        },
+        "children": {
+            "type": "json",
+            "question": "",
+            "can_be_null": true,
+            "additional_params": {
+            }
+        }
+    }
+}

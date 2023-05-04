@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "data-collection"
+version = "0.1.0"
+description = ""
+authors = ["Santo"]
+readme = "README.md"
+packages = [{include = "data_collection"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+streamlit = "^1.19.0"
+gspread = "^5.7.2"
+pandas = "^1.5.3"
+python-dotenv = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.21.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
