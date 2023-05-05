@@ -2,19 +2,19 @@ from PIL import Image
 import streamlit as st
 
 from . import INFO
-from ...paths import COMPANY_LOGO_ICO_PATH, COMPANY_LOGO_FULL_PATH
+from ...paths import COMPANY_LOGO_ICO_PATH  #, COMPANY_LOGO_FULL_PATH
 
 
-COMPANY_LOGO = str(COMPANY_LOGO_FULL_PATH.as_uri()) # "file://corp.ezetap.com/uploads/settings/logo2.png"
+# COMPANY_LOGO = str(COMPANY_LOGO_FULL_PATH.as_uri()) # "file://corp.ezetap.com/uploads/settings/logo2.png"
 # COMPANY_LOGO = "assets/logo.jpg"
-# COMPANY_LOGO = "https://corp.ezetap.com/uploads/settings/logo2.png"
+COMPANY_LOGO = "https://raw.githubusercontent.com/santokalayil/mcmf_data_collector_public/main/assets/logo.PNG"
 
 # st.write(COMPANY_LOGO)
 
 
 
 # @st.cache
-def add_logo():  # background-image: url({{ COMPANY_LOGO }});
+def add_logo(width:str="180px", height:str="220px"):  # background-image: url({{ COMPANY_LOGO }});
     style_text = """
         <style>
             [data-testid="stSidebarNav"] {
@@ -22,11 +22,16 @@ def add_logo():  # background-image: url({{ COMPANY_LOGO }});
                 background-repeat: no-repeat;
                 padding-top: 120px;
                 background-position: 20px 20px;
+                background-size: {{ width }}, {{ height }};
             }
         </style>
         """
-    
-    st.markdown(style_text.replace("{{ COMPANY_LOGO }}", COMPANY_LOGO), unsafe_allow_html=True)
+                # height: 100px;
+                # width: 100px;
+    filled_style_text = style_text\
+        .replace("{{ COMPANY_LOGO }}", COMPANY_LOGO)\
+        .replace("{{ width }}", width).replace("{{ height }}", height)
+    st.markdown(filled_style_text, unsafe_allow_html=True)
 
 
 # @st.cache
