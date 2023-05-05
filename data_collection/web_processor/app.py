@@ -4,7 +4,7 @@ import streamlit as st
 from .common import footer, header
 from ..config import DB_COLUMNS_INFO
 
-from ..data_processor import load_regionwise_parishes_data
+from ..data_processor import PARISHES, get_parishes_in_the_region, find_region
 from ..gcp_processor.sheets import add_record
 from ..paths import ASSETS_DIR
 from PIL import Image
@@ -24,7 +24,6 @@ for key, page in pages.items():
         page['page_name'] = new_page_names[page['page_name']]
 
 
-PARISHES = load_regionwise_parishes_data()
 
 def render():
     global LOGO_IMAGE
