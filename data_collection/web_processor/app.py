@@ -68,7 +68,7 @@ def render():
 
     # st.markdown("---")
 
-    st.write("Enter the following information:")
+    # st.write("Enter the following information:")
 
     message_holder = st.sidebar.empty()
 
