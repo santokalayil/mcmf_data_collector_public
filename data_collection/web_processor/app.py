@@ -70,7 +70,7 @@ def render():
 
     # st.write("Enter the following information:")
 
-    message_holder = st.sidebar.empty()
+    # message_holder = st.empty()
 
     error_messages = []
 
@@ -128,7 +128,7 @@ def render():
             use_container_width=True
         ) is True:
             if error_messages:
-                with message_holder.container():
+                with st.container():
                     for err_msg in error_messages:
                         st.error(err_msg)
             else:
