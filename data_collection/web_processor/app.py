@@ -4,6 +4,7 @@ import streamlit as st
 from .common import footer, header
 from ..config import DB_COLUMNS_INFO
 
+from ..data_processor import load_regionwise_parishes_data
 from ..gcp_processor.sheets import add_record
 from ..paths import ASSETS_DIR
 from PIL import Image
@@ -22,6 +23,8 @@ for key, page in pages.items():
     if page['page_name'] in new_page_names:
         page['page_name'] = new_page_names[page['page_name']]
 
+
+PARISHES = load_regionwise_parishes_data()
 
 def render():
     global LOGO_IMAGE
@@ -79,7 +82,14 @@ def render():
     with st.form(key="form", clear_on_submit=False):
         for col, params in DB_COLUMNS_INFO.items():
             label = col if params['question'] == "" else params['question']
-            if params["type"] == 'text':
+
+            if col == "region":
+                selected_region =st.selectbox(label, options=PARISHES.keys(), key=col)
+            elif col == "parish":
+                st.selectbox(label, options=PARISHES[selected_region])
+
+
+            elif params["type"] == 'text':
                 st.text_input(label, key=col)
             elif params['type'] == 'date':
                 st.date_input(label, key=col)

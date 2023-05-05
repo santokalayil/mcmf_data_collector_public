@@ -8,7 +8,7 @@
                 "max_chars": 25
             }
         },
-        "parish": {
+        "region": {
             "type": "text",
             "question": "",
             "can_be_null": false,
@@ -16,7 +16,7 @@
                 "max_chars": 25
             }
         },
-        "region": {
+        "parish": {
             "type": "text",
             "question": "",
             "can_be_null": false,

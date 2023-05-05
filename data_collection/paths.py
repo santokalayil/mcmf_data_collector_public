@@ -15,5 +15,7 @@ COMPANY_LOGO_FULL_PATH = COMPANY_LOGO_PATH.resolve()
 CREDENTIALS_DIR = ASSETS_DIR / "credentials"
 CONFIGURATION_DIR = ASSETS_DIR / "configuration"
 
+DATA_DIR = ASSETS_DIR / 'data'
+
 
 GCP_CREDENTIALS_JSON_PATH = CREDENTIALS_DIR / "google_sheet_db__datacollector.json" 
