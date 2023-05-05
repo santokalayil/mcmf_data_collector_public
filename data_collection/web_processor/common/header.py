@@ -7,6 +7,7 @@ from ...paths import COMPANY_LOGO_ICO_PATH  #, COMPANY_LOGO_FULL_PATH
 
 # COMPANY_LOGO = str(COMPANY_LOGO_FULL_PATH.as_uri()) # "file://corp.ezetap.com/uploads/settings/logo2.png"
 # COMPANY_LOGO = "assets/logo.jpg"
+# COMPANY_LOGO = "https://raw.githubusercontent.com/santokalayil/mcmf_data_collector_public/main/assets/logo.PNG"
 COMPANY_LOGO = "https://raw.githubusercontent.com/santokalayil/mcmf_data_collector_public/main/assets/logo.PNG"
 
 # st.write(COMPANY_LOGO)
