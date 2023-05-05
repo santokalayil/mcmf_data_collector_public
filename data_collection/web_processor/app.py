@@ -5,8 +5,11 @@ from .common import footer, header
 from ..config import DB_COLUMNS_INFO
 
 from ..gcp_processor.sheets import add_record
+from ..paths import ASSETS_DIR
+from PIL import Image
 
-    
+LOGO_IMAGE = Image.open(str(ASSETS_DIR / "logo.PNG"))
+
 
 pages = st.source_util.get_pages('main.py')
 new_page_names = {
@@ -21,7 +24,49 @@ for key, page in pages.items():
 
 
 def render():
+    global LOGO_IMAGE
     header.draw()
+    
+
+
+    logo_col, title_col = st.columns((4, 11))
+    logo_col.image(LOGO_IMAGE, use_column_width="always")
+    text = "Bhavana Jyothis" # rgb(255, 0, 154)
+    title_mkdwn = f'<p style="color:red; font-size: 30px; font-weight: 900;padding: 0px; margin: 0px; text-align: left;">{text}</p>'
+    title_col.markdown(title_mkdwn, unsafe_allow_html=True)
+
+    text = "Commission for Family and Women" # rgb(255, 0, 154)
+    title_mkdwn = f'<p style="color:blue; font-size: 24px; font-weight: bold;padding: 0px; margin: 0px; text-align: left;">{text}</p>'
+    title_col.markdown(title_mkdwn, unsafe_allow_html=True)
+
+
+    title_mkdwn = '<p style="color:rgb(255, 0, 154); font-size: 22px; font-weight: normal; padding: 0px; margin: 0px; text-align: left;">Diocese of Puttur</p>'
+    title_col.markdown(title_mkdwn, unsafe_allow_html=True)
+    
+    text = "The Syro-Malankara Catholic Church".upper()
+    title_mkdwn = f'<p style="color:black; font-size: 20px; font-weight: normal; padding: 0px; margin: 0px; text-align: left;">{text}</p>'
+    title_col.markdown(title_mkdwn, unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    title_mkdwn = '<p style="color:rgb(114, 0, 71); font-size: 34px; font-weight: 900; padding: 0px; margin: 0px;">Data Collection Drive <span style="color:rgb(255, 13, 71);">2k23</span></p>'
+    st.markdown(title_mkdwn, unsafe_allow_html=True)
+    # title_col.title(":violet[MCMF] Data Collection")
+    # title_col.header(":red[DIOCESE OF PUTTUR]")
+    # title_col.subheader("The Syro-Malankara Catholic Church")
+    
+    st.caption("A Venture to collect, analyse and understand about Mathruvedi Members")
+    # st.markdown("---")
+    with st.expander("See the instructions before filling the form below "):
+        st.write("""
+            The chart above shows some numbers I picked for you.
+            I rolled actual dice for these, so they're *guaranteed* to
+            be random.
+        """)
+
+
+    # st.markdown("---")
+
     st.write("Enter the following information:")
 
     message_holder = st.sidebar.empty()

@@ -46,9 +46,27 @@ def hide_streamlit_default_menu():
     footer {visibility: hidden;}
     </style> """, unsafe_allow_html=True)
 
+def remove_extra_padding():
+    st.markdown("""
+        <style>
+               .block-container {
+                    padding-top: 0rem;
+                    padding-bottom: 0rem;
+                    padding-left: 0rem;
+                    padding-right: 0rem;
+                }
+        </style>
+        """, unsafe_allow_html=True)
+
 # @st.cache
-def draw():
-    st.set_page_config(page_title=INFO["page_title"], page_icon=get_favicon(), layout=INFO["layout"])
+def draw(sibebar_collapsed=True):
+    st.set_page_config(
+        page_title=INFO["page_title"], 
+        page_icon=get_favicon(), 
+        layout=INFO["layout"], 
+        initial_sidebar_state="collapsed" if sibebar_collapsed is True else "expanded"
+    )
+    remove_extra_padding()
     hide_streamlit_default_menu()
     add_logo()
     message_holder = st.sidebar.empty()
