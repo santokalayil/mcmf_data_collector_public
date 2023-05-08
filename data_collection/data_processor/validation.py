@@ -9,7 +9,7 @@ def validate_session_input_data():
     error_messages = set()
 
     empty_fields = []
-    NULL_VALIDATION_ENABLED: bool = True
+    NULL_VALIDATION_ENABLED: bool = False
     if NULL_VALIDATION_ENABLED is True:
         for key, params in DB_COLUMNS_INFO.items():
             if key in data:
