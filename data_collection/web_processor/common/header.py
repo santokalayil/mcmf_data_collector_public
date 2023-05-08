@@ -67,7 +67,7 @@ def draw(sibebar_collapsed=True):
         layout=INFO["layout"], 
         initial_sidebar_state="collapsed" if sibebar_collapsed is True else "expanded"
     )
-    remove_extra_padding()
+    # remove_extra_padding()
     hide_streamlit_default_menu()
     add_logo()
     message_holder = st.sidebar.empty()

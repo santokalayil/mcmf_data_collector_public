@@ -46,7 +46,7 @@
             }
         },
         "address": {
-            "type": "text",
+            "type": "text-area",
             "question": "",
             "can_be_null": false,
             "additional_params": {

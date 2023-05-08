@@ -1,5 +1,6 @@
 import json
 from ..paths import DATA_DIR
+from ..config import DB_COLUMNS_INFO
 
 def load_regionwise_parishes_data() -> dict:
     REGIONWISE_PARISHES_JSON = DATA_DIR / "parishes.json"
@@ -24,3 +25,12 @@ def get_parishes_in_the_region(region) -> list:
         return PARISHES[region]
     else:
         raise Exception(f"The region '{region}' is not found")
+
+
+def serialize_data(data):
+    for col, params in DB_COLUMNS_INFO.items():
+        if col in data:
+            if params['type'] == 'date':
+                data[col] = data[col].strftime("%b %d %Y")
+    return data
+
